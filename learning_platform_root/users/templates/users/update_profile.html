@@ -1,0 +1,13 @@
+{% extends "courses/base.html" %}
+{% block content %}
+<form method="POST">
+          {% csrf_token %}
+          <fieldset class=>
+              <legend>Profile Info</legend>
+              {{ profile_form }}
+          </fieldset>
+          <div>
+              <button type="submit">Update</button>
+          </div>
+      </form>
+{% endblock content %}

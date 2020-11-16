@@ -1,0 +1,15 @@
+{% extends "courses/base.html" %}
+{% block content %}
+
+	<img id="user_photo" width = '200' height = '100' alt = 'USER PHOTO'/>
+	<h3>Your Information</h3>
+	<p>{{ role }}</p>
+	<p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+	<p>Pronouns: {{ user.pronouns }}</p>
+	<p>Team: {{ user.team }}</p>
+	<p>Email: {{ user.email }}</p>
+	{% if own_profile %}
+		<p><a href="{% url 'users:update_profile' %}">Update info</a></p>
+		<p><a href="{% url 'users:logout' %}">Log out</a></p>
+	{% endif %}
+{% endblock content %}

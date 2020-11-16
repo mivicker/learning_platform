@@ -1,0 +1,9 @@
+{% extends "courses/base.html" %}
+{% block content %}
+<h1>This is the community page</h1>
+
+<h2>Here is/are your buddy/buddies</h2>
+{% for buddy in buddies %}
+	<p><a href="{% url 'users:profile' buddy.pk %}"> {{ buddy }}</p>
+{% endfor %}
+{% endblock content %}
